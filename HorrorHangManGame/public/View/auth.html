@@ -1,17 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>Bloody Hangman</title>
+    <title>Register Email and Password</title>
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.5.6/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.5.6/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-storage.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <!-- Bootstrap -->
@@ -19,12 +19,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/public/Controller/FirebaseInitScript.js"></script>
-    <script type="text/javascript" src="/public/Controller/SignupController.js"></script>
+    <script type="text/javascript" src="/public/Style/js/navBar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/Style/css/navBar.css" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/Style/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/auth.css" />
     <script type="text/javascript" src="/public/Controller/RegistrationController.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/navBar.css" />
-
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 </head>
+
 <body>
     <div id="wrap">
         <nav class="navbar navbar-inverse">
@@ -59,21 +63,28 @@
         <div class="container-fluid text-center">
             <div class="content">
                 <div class="col-xs-12" id="main">
-                    <h1>Welcome to Bloody Hangman Game</h1>
-                    <p id="messageText2"></p>
-                    <br>
-                    <div class="inputs">
-                        <button id="search" class="btn btn-default" type="button" onclick="window.location='View/Hangman.html'">Play</button>
+                    <h2 id="authTitle">Register Email and Password</h2>
+                    <div id="input-area">
+                        <p id="messageText"></p>
+                        <input class="form-control" id="email" type="email" placeholder="Email:" required/>
+                        <input class="form-control" id="password" type="password" placeholder="Password:" required/>
+                        <input class="form-control" id="passwordConf" type="password" placeholder="Confirmation Password:" required/>
+                        <button class="btn btn-default" type="button" id="valify" onclick="execute(id)">Send Verification Email</button>
+                        <button class="btn btn-default" type="button" id="reload" onclick="execute(id)">Verified</button>
+                        <button class="btn btn-default" type="button" id="regist" onclick="execute(id)">Register Your Personal Data</button>
+                        <button class="btn btn-default" type="button" id="cancel" onclick="jumpToIndex()">Cancel</button>
                     </div>
-                    <br>
                 </div>
             </div>
         </div>
     </div>
     <footer class="navbar navbar-fixed-bottom">
         <div class="full">
-            <div class="container"> <span> © 2018 Copyright:</span> <span><a id="users" href="users.html" style="float:right;color:white;display:none;">Registered Users</a></span> </div>
+            <div class="container">
+                <p> © 2018 Copyright:</p>
+            </div>
         </div>
     </footer>
 </body>
+
 </html>
