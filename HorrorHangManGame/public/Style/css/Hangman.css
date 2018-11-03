@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    align-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+}
+
+.wrapper {
+    list-style-type: none;
+}
+
+#hold li {
+    display: inline-block;
+}
+
+#container {
+    align-content: container;
+}
+
+.active {
+    display: none;
+}
+
+#hold {
+    font-size: 1em;
+}

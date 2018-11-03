@@ -1,65 +1,78 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Bloody Hangman</title>
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.5.7/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.5.6/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.5.7/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.5.7/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.5.7/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.5.7/firebase-storage.js"></script>
+    <script defer src="/__/firebase/5.5.6/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.5.6/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.5.6/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.5.6/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Controller/FirebaseInitScript.js"></script>
+    <script type="text/javascript" src="Style/js/navBar.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/navBar.css" />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+</head>
+<body>
+    <div id="wrap">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width:40px;">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Bloody Hangman</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul id="loginTable" class="nav navbar-nav navbar-right">
+                        <li id="login" onclick="loginFunction(location.pathname)">Log In</li>
+                        <li><a id="messageText0" href="myprofile.html" style="color:white;"></a></li>
+                        <li id="signup" onclick="signupFunction()">Sign Up</li>
+                        <li id="messageText1">
+                            <p></p>
+                        </li>
+                        <li id="accountMenu" onclick="window.location='myprofile.html'"><img id="accountImage" src="" /></li>
+                        <li id="logout" class="buttons" onclick="logoutFunction()">Log Out</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid text-center">
+            <div class="content">
+                <div class="col-xs-12" id="main">
+                    <h1>Welcome to Bloody Hangman Game</h1>
+                    <p id="messageText2"></p>
+                    <br>
+                    <div class="inputs">
+                        <button id="search" class="btn btn-default" type="button" onclick="window.location='Hangman.html'">Play</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="full">
+            <div class="container"> <span> © 2018 Copyright:</span> <span><a id="users" href="users.html" style="float:right;color:white;display:none;">Registered Users</a></span> </div>
+        </div>
+    </footer>
+</body>
 </html>
