@@ -48,7 +48,7 @@ window.onload = function()
 				document.getElementById("reload").style.display="none";
 				document.getElementById("regist").style.display="none";
 				document.getElementById("cancel").style.display="block";
-				messageText.textContent = "Welcome to ColorSizeMe ! ";							
+				messageText.textContent = "Welcome to Horror Hang Man Game ! ";							
 			}	
 	});
 }
@@ -83,7 +83,7 @@ function execute(id)
 			//execute when pushed Log in button
 			if(id == "regist" && user.displayName == null)
 			{			
-				location.href = "/signup.html";
+				location.href = "../View/signup.html";
 			}
 		  }
 		  else 

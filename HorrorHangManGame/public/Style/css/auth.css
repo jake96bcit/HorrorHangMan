@@ -1,0 +1,50 @@
+﻿body
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#authTitle
+{
+	display: none;
+}
+
+#email
+{
+	display: none;
+}
+
+#password
+{
+	display: none;
+}
+
+#passwordConf
+{
+	display: none;
+}
+
+#reload
+{
+	display: none;
+}
+
+#regist
+{
+	display: none;
+}
+
+#valify
+{
+	display: none;
+}
+
+#reload
+{
+	display: none;
+}
+
+#cancel
+{
+	display: none;
+}

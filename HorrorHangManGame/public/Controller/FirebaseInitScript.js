@@ -10,5 +10,5 @@ window.onload = function () {
         storageBucket: "justforfun-6975e.appspot.com",
         messagingSenderId: "616271711232"
     };
-    firebase.initializeApp(config);
+    //firebase.initializeApp(config);
 };

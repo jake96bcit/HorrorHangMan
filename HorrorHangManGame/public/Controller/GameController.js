@@ -56,14 +56,14 @@ $.getScript("Model/Model.js", function () {
     function drawStickman() {
         for (var i = 0; i < lives; i++) {
             $('#stickman').prepend("<img id='stickman" + i
-                + "' src='./img/stickman.png' style='width=60px; height:120px'/>")
+                + "' src='../img/stickman.png' style='width=60px; height:120px'/>")
         }
     }
 
     function drawDead() {
         console.log(lives);
         //$('#stickman' + lives).attr('id','deadman' + lives); 
-        $('#stickman' + lives).attr('src', './img/deadman.png');
+        $('#stickman' + lives).attr('src', '../img/deadman.png');
 
     }
 

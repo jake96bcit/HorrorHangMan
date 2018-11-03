@@ -139,5 +139,5 @@ function logoutFunction()
 //Move to signup page
 function signupFunction()
 {			
-	location.href = "/auth.html" ;						
+	location.href = "../../View/auth.html" ;						
 }
