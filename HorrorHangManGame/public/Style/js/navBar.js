@@ -113,7 +113,7 @@ function loginFunction(locate)
 		else
 		{	//Jump to login.html with location parameter 
 			//which for returning to previous page after login process.		
-			location.href = "/login.html?"+locate ;	
+			location.href = "../../View/login.html?"+locate ;	
 		}	
 	});						
 }
@@ -127,7 +127,7 @@ function logoutFunction()
 			if(user) {	
 				firebase.auth().signOut().then(function() {
 					//move to index page
-					location.href = "/index.html" ;
+					location.href = "../../index.html" ;
 				}).catch(function(error) {
 					alert('Failed to Logout : ' + error.message);
 				});

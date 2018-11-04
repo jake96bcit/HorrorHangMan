@@ -1,0 +1,53 @@
+﻿body
+{
+	text-align: center;
+}
+
+#content-area
+{
+	background-color: #cccccc ;
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+h1
+{
+	padding-buttom: 20px;
+}
+
+#loginPic
+{
+	color : red;
+	display:none;
+	height: 150px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+input{
+	width: 200px;
+	padding: 2px;
+	margin: 0px auto;
+}
+
+button
+{
+	width: 120px;
+	margin-top:10px;
+}
+
+#messageText0
+{
+	font-Size: 20px;
+} 
+
+#repairPassword
+{
+	color: #323232;
+	font-weight: 500;
+	font-size: 15px;
+	padding-top: 20px;
+	display: none;
+}

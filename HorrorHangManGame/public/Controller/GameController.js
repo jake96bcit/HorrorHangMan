@@ -93,9 +93,9 @@ $.getScript("Model/Model.js", function () {
     // Show lives
     function comments() {
         if (lives < 1 && counter != word.length) {
-            alert("Game Over");
+            setTimeout(function(){ alert("Game Over"); }, 3000);
         } else if (lives > 0 && counter === word.length) {
-            alert("You Win");
+            setTimeout(function(){ alert("You Win"); }, 3000);
         }
     }
 

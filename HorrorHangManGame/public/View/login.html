@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Login form</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.13.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../Style/css/login.css" />
+    <script type="text/javascript" src="../Controller/LoginController.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../Style/css/style.css" />
+    <!-- Firebase Initialize -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script type="text/javascript" src="../Controller/FirebaseInitScript.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="content-area">
+            <h1>Login</h1> <img id="loginPic" />
+            <p id="messageText0"></p>
+            <p id="messageText1"></p>
+            <input class="form-control" id="email" type="email" placeholder="Email:" required/>
+            <input class="form-control" id="password" type="password" placeholder="Password:" required/>
+            <button class="btn btn-default" type="button" id="login" onclick="login()">Log in</button>
+            <button class="btn btn-default" type="button" id="cancel" onclick="jumpToLocate(location.search)">Cancel</button>
+        </div>
+    </div>
+</body>
+
+</html>
