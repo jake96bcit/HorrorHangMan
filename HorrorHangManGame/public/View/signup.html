@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="JS/signup.js"></script>
-    <script type="text/javascript" src="JS/Style.js"></script>
+    <script type="text/javascript" src="../Controller/signup.js"></script>
+    <script type="text/javascript" src="../Controller/Style.js"></script>
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -24,38 +24,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Firebase Initialize -->
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <script type="text/javascript" src="../Controller/FirebaseInitScript.js"></script>
-
-    <script type="text/javascript" src="../Style/js/navBar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../Style/css/navBar.css" type="text/css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../Style/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../Style/css/auth.css" />
-</head>
+    <script type="text/javascript" src="../Controller/FirebaseInitialScript.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/common.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/navBar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/dropdownMenu.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/iphone.css" /> </head>
 
 <body>
     <div id="wrap">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width:40px;">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../index.html">Bloody Hangman</a>
-                </div>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width:40px;"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="index.html">Horror Hangman Game</a> </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <ul id="loginTable" class="nav navbar-nav navbar-right">
                         <li id="login" onclick="loginFunction(location.pathname)">Log In</li>
-                        <li><a id="messageText0" href="myprofile.html" style="color:white;"></a></li>
+                        <li id="messageText0">
+                            <p></p>
+                        </li>
                         <li id="signup" onclick="signupFunction()">Sign Up</li>
                         <li id="messageText1">
                             <p></p>
@@ -95,12 +87,28 @@
                         <div class="col-sm-4">
                             <input type="file" class="btn btn-default" id="pic" name="Profile Picture"> </div>
                     </div>
-                   <!-- Buttons-->
+                    <!-- Text input-->
+                    <div class="col-sm-12 form-group">
+                        <label class="col-sm-4 control-label" for="towncity">City/Town</label>
+                        <div class="col-sm-4">
+                            <input id="towncity" name="City" type="text" placeholder="Burnaby" class="form-control input-sm" required=""> <span class="help-block" id="invalid_loc1" style="color:red;display:none;font-size:15px;">Type in city/town</span> </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="col-sm-12 form-group">
+                        <label class="col-sm-4 control-label" for="country">Country</label>
+                        <div class="col-sm-4">
+                            <input id="country" name="Country" type="text" placeholder="Canada" class="form-control input-sm" required=""> <span class="help-block" id="invalid_loc2" style="color:red;display:none;font-size:15px;">Type in country</span> </div>
+                    </div>
+                    <!-- Number input-->
+                    <div class="col-sm-12 form-group">
+                        <label class="col-sm-4 control-label" for="Age">Age</label>
+                        <div class="col-sm-4">
+                            <input id="age" name="Age" type="number" placeholder="25" class="form-control input-sm" onkeypress="return event.charCode >= 48"> </div>
+                    </div>
+                    <!-- Buttons-->
                     <div class="btn-group form-group col-sm-4" style="display:block;margin-left:auto;margin-right:auto;">
                         <input type="submit" class="btn btn-default " value="Create Profile">
                         <input type="button" class="btn btn-default" value="Cancel" onclick="window.location='index.html';"> </div>
-                    <br>
-                    <div class="note" style="clear:both;text-align:center;font-size:20px;padding-top:10px;display:none;">The following measurements are optional. You can edit these later in your user profile.</div>
                 </form>
             </div>
         </div>
@@ -111,6 +119,6 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="../Controller/UserProfileRegistration.js"></script>
+<script type="text/javascript" src="../Controller/RegisterController.js"></script>
 
 </html>

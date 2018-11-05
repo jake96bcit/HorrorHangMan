@@ -48,7 +48,7 @@ window.onload = function()
 				document.getElementById("reload").style.display="none";
 				document.getElementById("regist").style.display="none";
 				document.getElementById("cancel").style.display="block";
-				messageText.textContent = "Welcome to Horror Hang Man Game ! ";							
+				messageText.textContent = "Welcome to ColorSizeMe ! ";							
 			}	
 	});
 }
@@ -119,6 +119,6 @@ function execute(id)
 	}
 	else if(id == "cancel")//execute when pushed Log in button
 	{			
-		location.href = "/index.html";
+		location.href = "../index.html";
 	}
 }

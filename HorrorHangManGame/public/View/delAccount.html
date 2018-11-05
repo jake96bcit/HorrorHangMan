@@ -4,10 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>Login form</title>
+    <title>Delete Account form</title>
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -24,7 +21,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/login.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/iphone.css" />
-    <script type="text/javascript" src="../Controller/login.js"></script>
+    <script type="text/javascript" src="../Controller/accountManage.js"></script>
     <script type="text/javascript" src="../Controller/common.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script type="text/javascript" src="../Controller/FirebaseInitialScript.js"></script>
@@ -33,13 +30,12 @@
 <body>
     <div id="wrap">
         <div id="content-area">
-            <h1>Login</h1> <img id="loginPic" />
-            <p id="messageText0"></p>
-            <p id="messageText1"></p>
-            <input class="form-control" id="email" type="email" placeholder="Email:" required/>
-            <input class="form-control" id="password" type="password" placeholder="Password:" required/>
-            <button class="btn btn-default" type="button" id="login" onclick="login()">Log in</button>
-            <button class="btn btn-default" type="button" id="cancel" onclick="jumpToLocate(location.search)">Cancel</button> <a id="repairPassword" href="/repairPass.html">If you forget your password</a> </div>
+            <h1>Delete Account</h1> <img id="loginPic" />
+            <p>Please Input Password</p>
+            <p></p>
+            <input class="form-control" id="pw" type="password" placeholder="Password:" required/>
+            <button class="btn btn-default" type="button" onclick="accountDel()">Delete account</button>
+            <button class="btn btn-default" type="button" id="cancel" onclick="location.href='myprofile.html'">Cancel</button> <a id="repairPassword" href="/repairPass.html">If you forget your password</a> </div>
     </div>
 </body>
 

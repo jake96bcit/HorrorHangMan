@@ -15,6 +15,7 @@ var correct = 0;
 var live = 0;
 var letterGuesses = [];
 var score;
+var userId = firebase.auth().currentUser.uid;
 
 // Elements
 var lives;

@@ -34,13 +34,14 @@ window.onload = function()
 	//Get change event on Firebase Authenticatation
 	firebase.auth().onAuthStateChanged(function(user)
 	{
-		// If user auth data exixts, ture
+		// If user auth data exixts, true
 		if(user) 
 		{		
 			//If email verifying is done:
 			if(user.emailVerified)
 			{
 				//If user.displayName is null(means not registered yet)
+				console.log(user.username);
 				if(user.displayName == null)
 				{
 					document.getElementById("login").style.display="none";
@@ -113,7 +114,7 @@ function loginFunction(locate)
 		else
 		{	//Jump to login.html with location parameter 
 			//which for returning to previous page after login process.		
-			location.href = "/login.html?"+locate ;	
+			location.href = "../View/login.html?"+locate ;	
 		}	
 	});						
 }
@@ -127,7 +128,7 @@ function logoutFunction()
 			if(user) {	
 				firebase.auth().signOut().then(function() {
 					//move to index page
-					location.href = "/index.html" ;
+					location.href = "../index.html" ;
 				}).catch(function(error) {
 					alert('Failed to Logout : ' + error.message);
 				});
@@ -139,5 +140,5 @@ function logoutFunction()
 //Move to signup page
 function signupFunction()
 {			
-	location.href = "/public/View/auth.html" ;						
+	location.href = "../View/auth.html" ;						
 }

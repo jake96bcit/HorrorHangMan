@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.13.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../Controller/FirebaseInitialScript.js"></script>
+    <script type="text/javascript" src="../Controller/signup.js"></script>
+    <script type="text/javascript" src="../Controller/navBar.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/common.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/navBar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/dropdownMenu.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/iphone.css" />
+    <style media="screen"></style>
+</head>
+
+<body>
+    <div id="wrap">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width:40px;"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="index.html">Horror Hangman Game</a> </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul id="loginTable" class="nav navbar-nav navbar-right">
+                        <li id="login" onclick="loginFunction()">Log In</li>
+                        <li><a id="messageText0"  href="myprofile.html" style="color:white;"></a></li>
+                        <li id="signup" onclick="signupFunction()">Sign Up</li>
+                        <li id="messageText1">
+                            <p></p>
+                        </li>
+                        <li id="accountMenu" onclick="window.location='myprofile.html'"><img id="accountImage" src="" /></li>
+                        <li id="logout" class="buttons" onclick="logoutFunction()">Log Out</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="content" style="padding-top: 2em;">
+                <div class="col-xs-12" id="main"> <img src="" alt="Avatar" width="200" height="200" id="avatar" style="display:none;">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="fname" style="display:none;">First Name: </label> <span id="firstname"></span>
+                        <input id="fname" name="First Name" class="form-control input-sm" type="text" value="" style="display:none;"> <span class="help-block" id="invalid_fname" style="color:red;display: none;">Name can only contains alphabetic characters.</span> </div>
+                    <div class="form-group">
+                        <label for="lname" style="display:none;">Last Name: </label> <span id="lastname"></span>
+                        <input id="lname" name="Last Name" type="text" value="" style="display:none;"> <span class="help-block" id="invalid_lname" style="color:red;display: none;">Name can only contains alphabetic characters.</span> </div>
+                    <div class="form-group">
+                        <label for="age" style="display:none;">Age: </label> <span id="age"></span>
+                        <input id="age" name="Age" type="number" value="" onkeypress="return event.charCode >= 48" style="display:none;"> </div>
+                    <div class="form-group">
+                        <label id="un" for="username" style="display:none;">Username: </label> <span id="uname"></span>
+                        <input id="username" name="Username" type="text" value="" style="display:none;"> <span class="help-block" id="invalid_username" style="display:inline;"></span><span id="symbol" style="display:inline;"></span> </div>
+                    <div class="form-group">
+                        <label for="towncity" style="display:none;">City/Town: </label> <span id="citytown"></span>
+                        <input id="towncity" name="City" type="text" value="" style="display:none;"> <span class="help-block" id="invalid_loc1" style="color:red;display: none;">Type in city/town</span> </div>
+                    <div class="form-group">
+                        <label for="country" style="display:none;">Country: </label> <span id="ctry"></span>
+                        <input id="country" name="Country" type="text" value="" style="display:none;"> <span class="help-block" id="invalid_loc2" style="color:red;display: none;">Type in country</span> </div>
+                    <div class="form-group">
+                        <label for="score" style="display:none;">Lastest Score: </label> <span id="score"></span>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="full">
+            <div class="container"> <span> © 2018 Copyright:</span><a id="users" href="users.html" style="float:right;color:white;display:none;">Registered Users</a> </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../Controller/UserProfileController.js"></script>
+</body>
+
+</html>

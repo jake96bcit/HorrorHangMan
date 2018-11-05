@@ -1,31 +1,35 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>Bloody Hangman</title>
+    <title>Horror Hangman Game</title>
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.5.6/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.5.6/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.5.6/firebase-storage.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.13.0/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Firebase Initialize -->
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <script type="text/javascript" src="../Controller/FirebaseInitScript.js"></script>
-
-    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="Style/css/navBar.css" />
-    <script type="text/javascript" src="Style/js/navBar.js"></script>
+    <script type="text/javascript" src="../Controller/FirebaseInitialScript.js"></script>
+    <script type="text/javascript" src="../Controller/navBar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/navBar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/iphone.css" />
+    <style media="screen"></style>
 </head>
+
 <body>
     <div id="wrap">
         <nav class="navbar navbar-inverse">
@@ -36,8 +40,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Bloody Hangman</a>
-                </div>
+                    <a class="navbar-brand" href="index.html">Horror Hangman Game</a> </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Home</a></li>
@@ -77,4 +80,5 @@
         </div>
     </footer>
 </body>
+
 </html>

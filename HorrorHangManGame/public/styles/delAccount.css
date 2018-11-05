@@ -1,20 +1,20 @@
-﻿body
+body
 {
 	text-align: center;
+	
 }
 
 #content-area
 {
 	background-color: #cccccc ;
 	width: 400px;
-	height: 400px;
 	margin: 0 auto;
 	padding: 10px;
 }
 
 h1
 {
-	padding-buttom: 20px;
+	padding-top: 10px;
 }
 
 #loginPic
@@ -32,16 +32,56 @@ input{
 	margin: 0px auto;
 }
 
+#email
+{
+	display: none;
+}
+
+#password
+{
+	display: none;
+}
+
 button
 {
 	width: 120px;
 	margin-top:10px;
 }
 
+#login
+{
+	display: none;
+}
+
+#logout
+{
+	display: none;
+}
+
+#newuser
+{
+	display: none;
+}
+
+#userID
+{
+	display: none;
+}
+
+#cancel
+{
+	display: none;
+}
+
 #messageText0
 {
 	font-Size: 20px;
 } 
+
+#messageText1
+{
+	
+}
 
 #repairPassword
 {

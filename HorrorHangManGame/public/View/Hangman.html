@@ -19,7 +19,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
+        <script type="text/javascript" src="../Controller/FirebaseInitialScript.js"></script>
+        <script type="text/javascript" src="../Controller/navBar.js"></script>
+        <link rel="stylesheet" href="../styles/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/navBar.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/iphone.css" />
         <link rel="stylesheet" type="text/css" href="../Style/Hangman.css">
         <script type="text/javascript" src="../Model/Model.js" ></script>
         <script type="text/javascript" src="../Controller/GameController.js" ></script>
@@ -27,21 +33,62 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <h1>Hangman Game</h1>
-        </div>
-        <div class="wrapper">
-            <div id="stickman"></div>
-            <div id="hold"></div>
-            <br>
-            <div id="container">
-                <p id="score">Score: 0</p>
-                <p id="hintText"></p>
-                <button id="hint" class="btn btn-primary btn-lg">Hint</button>
-                <button id="reset" class="btn btn-primary btn-lg">Reset</button>
-            </div>
-            <br>
-            <div id="btns"></div>
-        </div>
+            <div id="wrap">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width:40px;">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">Horror Hangman Game</a> </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                                <ul id="loginTable" class="nav navbar-nav navbar-right">
+                                    <li id="login" onclick="loginFunction(location.pathname)">Log In</li>
+                                    <li><a id="messageText0" href="myprofile.html" style="color:white;"></a></li>
+                                    <li id="signup" onclick="signupFunction()">Sign Up</li>
+                                    <li id="messageText1">
+                                        <p></p>
+                                    </li>
+                                    <li id="accountMenu" onclick="window.location='myprofile.html'"><img id="accountImage" src="" /></li>
+                                    <li id="logout" class="buttons" onclick="logoutFunction()">Log Out</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="container-fluid text-center">
+                        <div class="content">
+                            <div class="col-xs-12" id="main">
+                                    <div class="wrapper">
+                                        <h1>Horror Hangman Game</h1>
+                                    </div>
+                                    <div class="wrapper">
+                                        <div id="stickman"></div>
+                                        <div id="hold"></div>
+                                        <br>
+                                        <div id="container">
+                                            <p id="score">Score: 0</p>
+                                            <p id="hintText"></p>
+                                            <button id="hint" class="btn btn-primary btn-lg">Hint</button>
+                                            <button id="reset" class="btn btn-primary btn-lg">Reset</button>
+                                        </div>
+                                        <br>
+                                        <div id="btns"></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="navbar navbar-fixed-bottom">
+                    <div class="full">
+                        <div class="container"> <span> © 2018 Copyright:</span> <span><a id="users" href="users.html" style="float:right;color:white;display:none;">Registered Users</a></span> </div>
+                    </div>
+                </footer>
     </body>
 </html>

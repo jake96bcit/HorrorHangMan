@@ -43,10 +43,10 @@ $.getScript("Model/Model.js", function () {
                 lives--;
                 score--;
                 myScore.innerHTML = "Score: " + score;
-                comments();
+                comments(score);
                 drawDead();
             } else {
-                comments();
+                comments(score);
                 score++;
                 myScore.innerHTML = "Score: " + score;
             }
@@ -91,11 +91,13 @@ $.getScript("Model/Model.js", function () {
     }
 
     // Show lives
-    function comments() {
+    function comments(score) {
         if (lives < 1 && counter != word.length) {
-            setTimeout(function(){ alert("Game Over"); }, 3000);
+            updateScore(userId, score);
+            setTimeout(function(){ alert("Game Over"); }, 2000);
         } else if (lives > 0 && counter === word.length) {
-            setTimeout(function(){ alert("You Win"); }, 3000);
+            updateScore(userId, score);
+            setTimeout(function(){ alert("You Win"); }, 2000);
         }
     }
 
@@ -125,4 +127,10 @@ $.getScript("Model/Model.js", function () {
     reset.onclick = function () {
         location.reload();
     }
+
+    function updateScore(userId, score) {
+        firebase.database().ref('users/' + userId).set({
+          score: score
+        });
+      }
 })
